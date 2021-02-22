@@ -15,7 +15,7 @@ import com.meditrack.data.Medication
 
 class AddMedicationFragment : Fragment() {
 
-    private val viewModel: DataViewModel by viewModels()
+    private val dataViewModel: DataViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +29,7 @@ class AddMedicationFragment : Fragment() {
                 view.findViewById<EditText>(R.id.editTextAddDose)?.text?.toString()?.toFloat() ?: 0f
             val unit = view.findViewById<EditText>(R.id.editTextAddUnit)?.text?.toString() ?: ""
 
-            viewModel.addMedication(Medication(0, name, dose, unit))
+            dataViewModel.addMedication(Medication(0, name, dose, unit))
             Toast.makeText(requireContext(), "Success!", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_medicationFragment_to_medicationListFragment)
         }

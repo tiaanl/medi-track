@@ -9,4 +9,8 @@ class MedicationRepository(private val medicationDao: MedicationDao) {
     suspend fun addMedication(medication: Medication) {
         medicationDao.insert(medication)
     }
+
+    suspend fun updateMedication(medication: Medication) {
+        medicationDao.update(medication)
+    }
 }

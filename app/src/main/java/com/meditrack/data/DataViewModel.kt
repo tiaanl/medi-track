@@ -24,4 +24,10 @@ class DataViewModel(application: Application) : AndroidViewModel(application) {
             repository.addMedication(medication)
         }
     }
+
+    fun updateMedication(medication: Medication) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updateMedication(medication)
+        }
+    }
 }
