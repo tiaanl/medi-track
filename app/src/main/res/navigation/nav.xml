@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/medicationListFragment">
+
+    <fragment
+        android:id="@+id/addMedicationFragment"
+        android:name="com.meditrack.AddMedicationFragment"
+        android:label="@string/add_medication"
+        tools:layout="@layout/fragment_add_medication">
+        <action
+            android:id="@+id/action_medicationFragment_to_medicationListFragment"
+            app:destination="@id/medicationListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicationListFragment"
+        android:name="com.meditrack.MedicationListFragment"
+        android:label="Medication List"
+        tools:layout="@layout/fragment_medication_list">
+        <action
+            android:id="@+id/action_medicationListFragment_to_medicationFragment"
+            app:destination="@id/addMedicationFragment" />
+        <action
+            android:id="@+id/action_medicationListFragment_to_updateMedicationFragment"
+            app:destination="@id/updateMedicationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateMedicationFragment"
+        android:name="com.meditrack.UpdateMedicationFragment"
+        android:label="@string/update_medication"
+        tools:layout="@layout/fragment_update_medication">
+        <action
+            android:id="@+id/action_updateMedicationFragment_to_medicationListFragment"
+            app:destination="@id/medicationListFragment" />
+        <argument
+            android:name="currentItem"
+            app:argType="com.meditrack.data.Medication" />
+    </fragment>
+</navigation>
