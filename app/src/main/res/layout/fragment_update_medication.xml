@@ -11,7 +11,6 @@
         android:id="@+id/editTextUpdateName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
         android:ems="10"
         android:hint="@string/medication_name"
         android:inputType="textPersonName"
