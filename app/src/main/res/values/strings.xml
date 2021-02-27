@@ -6,4 +6,5 @@
     <string name="medication_name">Medication name</string>
     <string name="unit">Unit</string>
     <string name="update_medication">Update medication</string>
+    <string name="delete">Delete</string>
 </resources>

@@ -30,4 +30,10 @@ class DataViewModel(application: Application) : AndroidViewModel(application) {
             repository.updateMedication(medication)
         }
     }
+
+    fun deleteMedication(medication: Medication) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteMedication(medication)
+        }
+    }
 }
